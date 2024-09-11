@@ -1,0 +1,318 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+html,
+body,
+:root{
+  height: 100%;
+  color: black;
+  background-color: black;
+  font-family: var(--font-montserrat);
+}
+
+.inter {
+  font-family: var(--font-arvo);
+}
+
+.sherika {
+  font-family: var(--font-sherika);
+}
+
+.akira {
+  font-family: var(--font-akira);
+}
+
+.europa {
+  font-family: var(--font-europa);
+}
+
+.primary-color {
+  background-color: #7765c8;
+  color: black;
+}
+
+.heading {
+  background: linear-gradient(90deg, #A67FB9 0%, #E6E3F1 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.primary-text {
+  color: #7765c8;
+}
+
+.secondary-color {
+  background-color: #ffffff;
+  color: black;
+}
+
+.secondary-text {
+  color: #ffffff;
+}
+
+.accent-color {
+  background-color: #252565;
+  color: white;
+}
+
+.accent-text {
+  color: #252565;
+}
+
+@keyframes logoAnimation {
+  0% {
+    transform: translateY(-100vh);
+  }
+  60% {
+    transform: translateY(10px);
+  }
+  70% {
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(10px);
+  }
+  90% {
+    transform: translateY(0);
+  }
+  95% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Bottom to top */
+@keyframes logoTextAnimation {
+  0% {
+    transform: translateY(100vh);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes splashScreenSection {
+  0% {
+    opacity: 1;   
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+  
+}
+
+.splash-screen-logo {
+  animation: logoAnimation 4s ease-in-out forwards;
+}
+
+.splash-screen-logo-text {
+  animation: logoTextAnimation 2s ease-in-out forwards;
+}
+
+.splash-screen-section {
+  animation: splashScreenSection 4s ease-in-out forwards;
+}
+
+
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Vertical layout on smaller screens */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    overflow-y: auto; /* Enable vertical scrolling */
+    height: 100vh; /* Full height */
+  }
+}
+
+
+@keyframes plus-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.hover\:animation-spin:hover {
+  animation: plus-spin 1s linear forwards;
+}
+
+@media (min-width: 768px) {
+* {
+  margin: 0;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+/*  note vh and vw switched  */
+  width: 100vh; 
+  height: 100vw;
+/*    */
+  transform-origin: top left;
+  transform: rotate(-90deg) translateX(-100vh);
+  overflow-x: hidden;
+  overflow-y: scroll;
+/*   scroll-snap-type: y mandatory; */
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  height: fit-content;
+  transform-origin: top left;
+  transform: rotate(90deg) translateY(-100vh);
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: start;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+/*  backface visibility keeps font from looking weird  */
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+#what-we-do {
+  max-width: fit-content;
+  justify-content: flex-start;
+}
+}
+
+
+
+@keyframes icon1TopAnimation {
+  0% {
+    transform: translate(0, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon2TopAnimation {
+  0% {
+    transform: translate(-47vw, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0TopAnimation {
+  0% {
+    transform: translate(47vw, 45vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0MidAnimation {
+  0% {
+    transform: translate(47vw, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon1MidAnimation {
+  0% {
+    transform: translate(-47vw, 0) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon1BottomAnimation {
+  0% {
+   transform: translate(0, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon2BottomAnimation {
+  0% {
+    transform: translate(-47vw, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes icon0BottomAnimation {
+  0% {
+    transform: translate(47vw, -39vh) rotate(0deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+#icon-0-mid {
+  animation: icon0MidAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-1-mid {
+  animation: icon1MidAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-0-top {
+  animation: icon0TopAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-1-top {
+  animation: icon1TopAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-2-top {
+  animation: icon2TopAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-0 {
+  animation: icon0BottomAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-1 {
+  animation: icon1BottomAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+#icon-2 {
+  animation: icon2BottomAnimation 2s cubic-bezier(.42,0,.45,.98) forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
